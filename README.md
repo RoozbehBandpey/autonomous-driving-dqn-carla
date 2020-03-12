@@ -28,5 +28,11 @@ The machine used was [Windows] 64-bit, 16GB RAM | intel(R) Core(TM) i7-8650U CPU
 * Download and install [CARLA 0.9.8 for windows](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/CARLA_0.9.8.zip)
 * Download and install [CARLA Additional Maps 0.9.8](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/AdditionalMaps_0.9.8.zip)
 
-Extract downloaded package 
+Extract downloaded package
+
+Open a terminal in the main CARLA folder. Run the following command to execute the package file and start the simulation:
 run carla
+```
+> CarlaUE4.exe
+```
+You can use your W, A, S and D to moved arround and mouse left click + drag to look arround
