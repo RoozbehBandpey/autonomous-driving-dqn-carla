@@ -17,9 +17,16 @@ At time of this experiment [CARLA 0.9.8](https://github.com/carla-simulator/carl
 * System requirements. Any 64-bits OS should run CARLA.
 * Other requirements. Two Python modules: Pygame to create graphics directly with Python, and Numpy for great calculus.
 
+Windows users need two other requirments to run CARLA:
+* [DirectX Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+* [Open GL 3.3 or above](https://developer.nvidia.com/opengl-driver)
+
+
 Run **reuirments.txt** to get all dependencies installed.
 
 The machine used was [Windows] 64-bit, 16GB RAM | intel(R) Core(TM) i7-8650U CPU @ 1.90GHz 2.11GHz | NVIDIA GeForce GTX 1050
 * Download and install [CARLA 0.9.8 for windows](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/CARLA_0.9.8.zip)
 * Download and install [CARLA Additional Maps 0.9.8](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/AdditionalMaps_0.9.8.zip)
 
+Extract downloaded package 
+run carla
