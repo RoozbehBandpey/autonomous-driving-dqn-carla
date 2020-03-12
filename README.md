@@ -21,6 +21,7 @@ Windows users need two other requirments to run CARLA:
 * [DirectX Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=35)
 * [Open GL 3.3 or above](https://developer.nvidia.com/opengl-driver)
 
+Note: CARLA 0.9.8 only works with python 3.7
 
 Run **reuirments.txt** to get all dependencies installed.
 
@@ -28,6 +29,7 @@ The machine used was [Windows] 64-bit, 16GB RAM | intel(R) Core(TM) i7-8650U CPU
 * Download and install [CARLA 0.9.8 for windows](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/CARLA_0.9.8.zip)
 * Download and install [CARLA Additional Maps 0.9.8](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/AdditionalMaps_0.9.8.zip)
 
+## Installation
 Extract downloaded package
 
 Open a terminal in the main CARLA folder. Run the following command to execute the package file and start the simulation:
@@ -36,3 +38,18 @@ run carla
 > CarlaUE4.exe
 ```
 You can use your W, A, S and D to moved arround and mouse left click + drag to look arround
+
+Run the following conmmand to add vehicles and pedestrians
+
+```
+> python3 spawn_npc.py -n [numberOfUnits]
+```
+
+## Repo agenda
+* Controlling the Car and getting Camera Sensor Data
+	* Spawn the car in its environment
+	* Controll the car in its environment
+	* Get sensory data back from that car
+		* Hood camera
+		* Collision sensor
+* Reinforcement Learning to train a self-driving car
