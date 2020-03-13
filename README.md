@@ -42,8 +42,19 @@ You can use your W, A, S and D to moved arround and mouse left click + drag to l
 Run the following conmmand to add vehicles and pedestrians
 
 ```
-> python3 spawn_npc.py -n [numberOfUnits]
+> python3 spawn_npc.py -n <number-of-units>
 ```
+
+## Using CARLA in python
+
+If you attempt to import carla you'll face the error ```ModuleNotFoundError: No module named 'carla'```
+
+You either need to write your script dirercty where you extracted carla. In that case the part ```sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg'...``` will detect carla path in your environment variables.
+
+Or change the path in ```sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg'...``` to directrly point to where you extracted carla.
+
+A cleaner way would be to copy ```'../carla/dist/carla-*%d.%d-%s.egg'``` in your python site pachkages, then you can import it normally anywhere you are developing your script.
+
 
 ## Repo agenda
 * Controlling the Car and getting Camera Sensor Data
