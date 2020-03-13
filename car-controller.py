@@ -23,7 +23,14 @@ actors = []
 
 # -- attempt to connect to server and clean ups
 try:
-	pass
+	client = carla.Client('localhost', 2000)
+	client.set_timeout(2.0)
+	world = client.get_world()
+	blueprint_library = world.get_blueprint_library()
+
+	blueprint = blueprint_library.filter("model3")[0]
+	print(blueprint)
+
 finally:
 	for actor in actors:
 		actor.destroy()
