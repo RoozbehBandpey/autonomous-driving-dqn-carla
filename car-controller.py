@@ -21,6 +21,12 @@ import random
 import time
 
 actors = []
+IM_WIDTH = 640
+IM_HIGHT = 480
+
+
+def process_img(image):
+	
 
 # -- attempt to connect to server and clean ups
 try:
@@ -39,7 +45,24 @@ try:
 
 	vehicle.apply_control(carla.VehicleControl(throttle=1.0, steer=0.0))
 	actors.append(vehicle)
+
+	# attach a camera sensor to the car
+	cam_blueprint = blueprint_library.find("sensor.camera.rgb")
+	cam_blueprint.set_attribute("image_size_x", f"{IM_WIDTH}")
+	cam_blueprint.set_attribute("image_size_y", f"{IM_HIGHT}")
+	cam_blueprint.set_attribute("fov", "110")
+
+
+	spawn_point = carla.Trasform(carla.Location(x=2.5, z=0.7))
+	sensor = world.spawn_actor(cam_blueprint, spawn_point, attach_to=vehicle)
+	actors.append(sensor)
+
+	# listening
+	sensor.listen(lambda dsta: process_img(data))
+
 	time.sleep(15)
+
+
 
 finally:
 	for actor in actors:
