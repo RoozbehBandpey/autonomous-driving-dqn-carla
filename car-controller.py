@@ -28,6 +28,9 @@ import random
 import time
 
 
+client = carla.Client('localhost', 2000)
+client.set_timeout(2.0)
+
 # def main():
 #     actor_list = []
 

@@ -53,7 +53,7 @@ You either need to write your script dirercty where you extracted carla. In that
 
 Or change the path in ```sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg'...``` to directrly point to where you extracted carla.
 
-A cleaner way would be to copy ```'../carla/dist/carla-*%d.%d-%s.egg'``` in your python site pachkages, then you can import it normally anywhere you are developing your script.
+A cleaner way would be to copy ```'../carla/dist/carla-*%d.%d-%s.egg'``` in your python site pachkages, then you can import it normally anywhere you are developing your script. Just make sure site packages are accesible form your environment variables.
 
 
 ## Repo agenda
