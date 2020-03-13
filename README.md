@@ -47,6 +47,8 @@ Run the following conmmand to add vehicles and pedestrians
 
 ## Using CARLA in python
 
+Note that you need to have carla running (the shell or .exe) in order to run scripts.
+
 If you attempt to import carla you'll face the error ```ModuleNotFoundError: No module named 'carla'```
 
 You either need to write your script dirercty where you extracted carla. In that case the part ```sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg'...``` will detect carla path in your environment variables.
