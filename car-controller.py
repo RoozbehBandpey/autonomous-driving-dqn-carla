@@ -17,7 +17,8 @@ except IndexError as err:
 
 # -- imports
 import carla
-
+import random
+import time
 
 actors = []
 
@@ -30,6 +31,15 @@ try:
 
 	blueprint = blueprint_library.filter("model3")[0]
 	print(blueprint)
+
+	spawn_point = random.choice(world.get_map().get_spawn_points())
+
+	vehicle = world.spawn_actor(blueprint, spawn_point)
+	# vehicle.set_autopilot(True)
+
+	vehicle.apply_control(carla.VehicleControl(throttle=1.0, steer=0.0))
+	actors.append(vehicle)
+	time.sleep(15)
 
 finally:
 	for actor in actors:
