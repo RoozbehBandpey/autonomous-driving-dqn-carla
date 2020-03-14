@@ -9,5 +9,15 @@ class DQN(object):
 	def step(self, action):
 		"""
 		param: action
-		:return 
+		:return next observation
+		:return rward
+		:return: done boolean flag wheather or not we're done
+		:return: extra info
+		"""
+		return obs, reward, done, _
+
+
+	def reset(self):
+		"""
+		run annother episode
 		"""
