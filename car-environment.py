@@ -63,13 +63,13 @@ class CarEnvironment:
 		transform = carla.Transform(carla.Location(x=2.5, z=0.7))
 		self.sensor = self.world.spawn_actor(self.rgb_cam, transform, attach_to=self.vehicle)
 		self.actor_list.append(self.sensor)
-		self.sensor,listen(lambda data: self.process_img(data))
+		self.sensor.listen(lambda data: self.process_img(data))
 
 	def process_img(self, image):
 		i = np.array(image.raw_data)
 		print(i.shape)
 		i2 = i.reshape((IM_HEIGHT, IM_WIDTH, 4))
-	
+
 		# The entire height, the entire width, thr first three of r, g, b, a
 		# Kinda nifty way to grab r,g,b there is an open cv method to do the exact same thing
 		# Basically converts rgb alpha to just straight up  rgb, interestingly enough it is slower than the numpy method
