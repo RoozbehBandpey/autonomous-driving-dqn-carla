@@ -1,4 +1,4 @@
-
+import gym
 
 
 
@@ -10,4 +10,15 @@ class DQN:
 
 
 if __name__ == "__main__":
-	pass
+	env = gym.make("MountainCar-v0")
+	env.reset()
+
+	done = False
+
+	while not done:
+		action = 2
+		new_state, reward, done, _ = env.step(action)
+		# getting position and velocity
+		env.render(action)
+
+	env.close()
