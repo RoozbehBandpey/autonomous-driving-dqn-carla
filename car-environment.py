@@ -28,6 +28,7 @@ import math
 SHOW_PREVIEW = False # Turn to ture for debuigging purposes. Display the actual camera. To display the preview it's gonna lock up compute resources. Setting this to True probably gonna maxing things up
 IM_WIDTH = 640
 IM_HEIGHT = 480
+SECONDS_PER_EPISODE = 0
 
 
 class CarEnvironment:
@@ -43,7 +44,7 @@ class CarEnvironment:
 		self.client.set_timeout(2.0)
 		self.world = self.client.get_world()
 		self.blueprint_library = self.world.get_blueprint_library()
-		self.model_3 = blueprint_library.filter("model3"[0])
+		self.model_3 = self.blueprint_library.filter("model3")[0]
 
 	def reset(self):
 		"""
