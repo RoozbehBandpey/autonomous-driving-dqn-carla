@@ -109,6 +109,13 @@ class CarEnvironment:
 
 
 	def step(self, action):
+		"""
+		param: action
+		:return next observation
+		:return rward
+		:return: done boolean flag wheather or not we're done
+		:return: extra info
+		"""
 		if action == 0:
 			self.vehicle.apply_control(carla.VehicleControl(throttle=1.0, steer=-1*self.STEER_AMT))
 		elif action == 1:
