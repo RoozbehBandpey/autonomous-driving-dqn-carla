@@ -19,6 +19,9 @@ if __name__ == "__main__":
 		action = 2
 		new_state, reward, done, _ = env.step(action)
 		# getting position and velocity
+		print(new_state)
 		env.render(action)
+
+		
 
 	env.close()
