@@ -1,4 +1,5 @@
 import gym
+import numpy as np
 
 
 
@@ -27,6 +28,9 @@ if __name__ == "__main__":
 	descrite_observation_win_size = (env.observation_space.high - env.observation_space.low) / DISCRETE_OBESERVATION_SIZE
 
 	print(descrite_observation_win_size)
+
+	q_table = np.random.uniform(low=-2, high=0, size=(DISCRETE_OBESERVATION_SIZE + [env.action_space.n]))
+	print(q_table)
 	
 
 	done = False
